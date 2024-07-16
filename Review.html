@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name ="viewport" content="width=device-width,initial-scale=1.0">
+	<title>CHILLFIX</title>
+	<link rel="stylesheet" href="style .css">
+    <style>
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.review-container {
+    text-align: center;
+}
+
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+    font-size: 2em;
+    unicode-bidi: bidi-override;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    color: #bbb;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: #f2b600;
+}
+
+.rating-text {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+textarea {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.submitted-review {
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+	<div class="header">
+		<p><b>ChillFix</b>  <br /><br />Aircond Repair & Service</p>
+		<img src="org2.jpg"width="120" height="80" alt="ChillFix logo">
+    </div>
+<div class="navigation">
+	<ul>
+		<li><a href="Home.html">Home</a></li>
+		<li><a href="Service & Price.html">Service & Price</a></li>
+		<li><a href="Booking.html">Booking</a></li>
+		<li><a href="Review.html">Review</a></li>
+		<li><a href="About Us.html">About Us</a></li>	
+		<li><a href="Profile.html">Profile</a></li>
+		<li><a href="Log Out.html">Log Out</a></li>
+	</ul>
+</div>
+
+</head>
+<body>
+    <div class="review-container">
+        <form id="reviewForm">
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars">★</label>
+                <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">★</label>
+                <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">★</label>
+                <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">★</label>
+                <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star">★</label>
+            </div>
+            <div id="ratingText" class="rating-text"></div>
+            <textarea id="reviewText" placeholder="Write your review here..."></textarea>
+            <button type="button" onclick="submitReview()">Send</button>
+        </form>
+        <div id="submittedReview" class="submitted-review"></div>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star-rating input');
+        stars.forEach(star => {
+            star.addEventListener('change', updateRatingText);
+        });
+
+        function updateRatingText() {
+            const ratingText = document.getElementById('ratingText');
+            switch (this.value) {
+                case '1':
+                    ratingText.textContent = "I don't like";
+                    break;
+                case '2':
+                    ratingText.textContent = "Not great";
+                    break;
+                case '3':
+                    ratingText.textContent = "It's okay";
+                    break;
+                case '4':
+                    ratingText.textContent = "I like it";
+                    break;
+                case '5':
+                    ratingText.textContent = "I love it";
+                    break;
+            }
+        }
+
+        function submitReview() {
+            let rating = 0;
+            stars.forEach(star => {
+                if (star.checked) {
+                    rating = star.value;
+                }
+            });
+
+            const reviewText = document.getElementById('reviewText').value;
+            const submittedReview = document.getElementById('submittedReview');
+            submittedReview.innerHTML = `
+                <h2>Your Review</h2>
+                <p>Rating: ${rating} stars</p>
+                <p>${reviewText}</p>
+            `;
+        }
+    </script> 
+    <div class="footer">
+        <img src="logo pic.jpg"width="150" height="80">
+        <p><b>No Tel</b>  <br /><br />012 34567890</p>
+        <p><b>Email</b> <br /><br />chillfix@gmail.com</p>
+        <p><b>Address</b> <br /><br />18, Jalan Metafasa U16/5, Taman Bukit<br /> Subang, 40160, Shah Alam, Selangor</p>
+    </div>
+    </body>
+    </html>

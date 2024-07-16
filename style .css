@@ -1,0 +1,172 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif; /* Use Arial as the primary font */
+    background: url('aircond\ 1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header Styles */
+.header {
+    background-color: #F5CBA7;
+    color: #000;
+    text-align: center;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header img {
+    margin-right: 20px; /* Adjust spacing as needed */
+    position: absolute;
+    left: 20px; /* Adjust the position as needed */
+}
+
+/* Navigation Styles */
+.navigation {
+    background-color: #E59866;
+    color: #000;
+    width: 100px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    padding-top: 140px; /* To push the navigation items below the header */
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation ul li {
+    margin-bottom: 10px;
+}
+
+.navigation ul li a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Content Styles */
+.content {
+    margin-left: 120px; /* Adjust based on the width of navigation + some spacing */
+    padding: 130px;
+}
+
+.container {
+    background-color: rgba(225, 215, 202, 0.481);
+    margin: 114x auto 30px auto; /* Adjusting margin to account for fixed header and footer */
+    padding: 15px;
+    width: 62%;
+    border: 1px solid #e6cfbb;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review {
+    background-color: #f9f9f9;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 0px;
+    border: 1px solid #ccc;
+}
+
+.review p {
+    margin-top: 0;
+    font-style: italic;
+}
+
+/* Review Form Styles */
+.review-form {
+    margin-top: 10px;
+}
+
+textarea {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #E78938 ;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #E78938;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    margin: 100px 100px 100px 150px; /* Adjusted left margin */
+  }
+  
+  .top {
+    margin-top: 90px;
+  }
+  
+  .top .box {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    border: 0px solid #ddd;
+    margin-bottom: 80px;
+    margin-left: 50px; /* Adjusted left margin */
+  }
+  
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .bottom .box {
+    background-color: #f2f2f2;
+    padding: 30px;
+    text-align: center;
+    border: 3px solid #ddd;
+    margin-left: 50px; /* Adjusted left margin */
+  }
+  
+  @media (min-width: 768px) {
+    .bottom {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+/* Footer Styles */
+.footer {
+    background-color: #F5CBA7;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 140px;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+}
+
+.footer p {
+    margin: 0;
+}

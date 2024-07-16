@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHILLFIX</title>
+    <link rel="stylesheet" href="style .css">
+    <style>.footer {
+        background-color: #F5CBA7;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 140px;
+        padding: 20px 0;
+        margin-left: -283px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+    }
+    
+    .footer p {
+        margin: 0;
+    }
+    </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('form').on('submit', function(event) {
+                    event.preventDefault(); // Prevent the default form submission
+                    
+                    $.ajax({
+                        url: 'Profile.php',
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        success: function(response) {
+                            alert(response); // Show the response message in an alert
+                        },
+                        error: function() {
+                            alert('An error occurred while updating the profile.');
+                        }
+                    });
+                });
+            });
+        </script>
+	<div class="header">
+		<p><b>ChillFix</b>  <br /><br />Aircond Repair & Service</p>
+		<img src="org2.jpg"width="120" height="80" alt="ChillFix logo">
+    </div>
+    <div class="navigation">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Service & Price.html">Service & Price</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Review.html">Review</a></li>
+            <li><a href="About Us.html">About Us</a></li>    
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Log Out.html">Log Out</a></li>    
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Profile Form</h2>
+        <form action="Profile.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" required><br /><br />
+    
+            <label for="phonenumber">Phone Number:</label>
+            <input type="tel" name="phonenumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: XXX-XXX-XXXX" required><br /><br />
+    
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br /><br />
+    
+            <label for="username">Username:</label>
+            <input type="text" name="username" autocomplete="off"><br /><br />
+    
+            <label for="password">Password:</label>
+            <input type="password" name="password" autocomplete="off"><br /><br />
+    
+            <label for="address">Address:</label>
+            <textarea name="address" rows="4" required></textarea>
+    
+            <button type="SUBMIT">SAVE</button>
+        </form>
+        <div class="footer">
+            <img src="logo pic.jpg"width="150" height="80">
+            <p><b>No Tel</b>  <br /><br />012 34567890</p>
+            <p><b>Email</b> <br /><br />chillfix@gmail.com</p>
+            <p><b>Address</b> <br /><br />18, Jalan Metafasa U16/5, Taman Bukit<br /> Subang, 40160, Shah Alam, Selangor</p>
+        </div>
+</body>
+</html>

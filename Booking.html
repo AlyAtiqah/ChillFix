@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name ="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CHILLFIX</title>
+	<link rel="stylesheet" href="style .css">
+    <style>
+        .container {
+    background-color: rgba(225, 215, 202, 0.481);
+    margin: 112px auto 20px auto; /* Adjusting margin to account for fixed header and footer */
+    padding: 7px;
+    width: 62%;
+    border: 1px solid #e6cfbb;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').on('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+                
+                $.ajax({
+                    url: 'booking.php',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        alert(response); // Show the response message in an alert
+                    },
+                    error: function() {
+                        alert('An error occurred while submitting the form.');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+	<div class="header">
+		<p><b>ChillFix</b>  <br /><br />Aircond Repair & Service</p>
+		<img src="org2.jpg"width="120" height="80" alt="ChillFix logo">
+    </div>
+    <div class="navigation">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="Service & Price.html">Service & Price</a></li>
+            <li><a href="Booking.html">Booking</a></li>
+            <li><a href="Review.html">Review</a></li>
+            <li><a href="About Us.html">About Us</a></li>	
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="Log Out.html">Log Out</a></li>		
+              
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Booking Form</h2>
+        <form action="Booking.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" autocomplete="off" required><br /><br />
+
+            <label for="service">Service:</label>
+            <input type="text" name="service" required><br /><br />
+    
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" required><br /><br />
+    
+            <label for="aircond">Aircond:</label>
+            <input type="text" name="aircond" required><br /><br />
+    
+            <label for="address">Address:</label>
+            <textarea name="address" rows="3" required></textarea><br />
+    
+            <label for="date">Date:</label>
+            <input type="date" name="date" required><br /><br />
+    
+            <label for="time">Time:</label>
+            <input type="time" name="time" required><br /><br />
+    
+            <button type="SUBMIT">SUBMIT</button>
+        </form>
+    </div>
+    <div class="footer">
+        <img src="logo pic.jpg"width="150" height="80">
+        <p><b>No Tel</b>  <br /><br />012 34567890</p>
+        <p><b>Email</b> <br /><br />chillfix@gmail.com</p>
+        <p><b>Address</b> <br /><br />18, Jalan Metafasa U16/5, Taman Bukit<br /> Subang, 40160, Shah Alam, Selangor</p>
+    </div>
+</body>
+</html>
